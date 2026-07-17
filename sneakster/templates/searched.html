@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block main %}
+  <form action="/search" method="post">
+    <div class="form-group">
+      <input autocomplete="off" autofocus class="form-control" name="search" placeholder="Sneaker" type="text" id="searchBox">
+      <button class="btn btn-primary" type="submit" class="buttonindex">Search</button>
+    </div>
+  </form>
+  <h3>Showing {{ x }} results for {{ shoe }}(s)</h3>
+  {% for sneaker in sneakers %}
+    <form action="/shoe" method="post">
+      <button type="submit" value="{{ sneaker.id }}" name="tag" class="btn btn-primary" class="button-color">
+        <img src="{{ sneaker.image }}" alt="{{ sneaker.name }}"></img>
+        <h4>{{ sneaker.name }}</h4>
+      </button>
+    </form>
+  {% endfor %}
+  <h4>Not the results you were looking for. Manually add to the database <a href="/add">HERE</a></h4>
+{% endblock %}

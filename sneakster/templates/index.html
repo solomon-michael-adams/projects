@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block main %}
+  <div style="text-align: center;">
+    <h3 style="display:inline-block">Favorites</h3>
+    <a href="/edit" style="display:inline-block;">
+      <p style="padding-left: 5px;">Edit</p>
+    </a>
+    <div>
+      {% for top in tops %}
+        <form action="/shoe" method="post">
+          <div class="btn-group">
+            <button type="submit" value="{{ top.id }}" name="tag" class="btn btn-primary buttonindex">
+              <img src="{{ top.image }}" alt="{{ top.name }}" class="img-size"></img>
+            </button>
+          </div>
+        </form>
+      {% endfor %}
+    </div>
+  </div>
+  <div style="text-align: center;">
+    <h3 style="display:inline-block">Wishlist</h3>
+    <a href="/edit" style="display:inline-block;">
+      <p style="padding-left: 5px;">Edit</p>
+    </a>
+    <div>
+      {% for wishlist in wishlists %}
+        <form action="/shoe" method="post">
+          <div class="btn-group">
+            <button type="submit" value="{{ wishlist.id }}" name="tag" class="btn btn-primary buttonindex">
+              <img src="{{ wishlist.image }}" alt="{{ wishlist.name }}" class="img-size"></img>
+            </button>
+          </div>
+        </form>
+      {% endfor %}
+    </div>
+  </div>
+  <div style="text-align: center;">
+    <h3 style="display:inline-block">Purchased</h3>
+    <a href="/edit" style="display:inline-block;">
+      <p style="padding-left: 5px;">Edit</p>
+    </a>
+    <div>
+      {% for purchase in purchases %}
+        <form action="/shoe" method="post">
+          <div class="btn-group">
+            <button type="submit" value="{{ purchase.id }}" name="tag" class="btn btn-primary buttonindex">
+              <img src="{{ purchase.image }}" alt="{{ purchase.name }}" class="img-size"></img>
+            </button>
+          </div>
+        </form>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

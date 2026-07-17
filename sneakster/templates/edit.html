@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block main %}
+  <form action="/edit" method="post">
+    <h3>Favorites</h3>
+    {% for top in tops %}
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="inlineCheckbox1{{ top.id }}" name="t{{ top.id }}" value="true">
+      <label class="form-check-label" for="inlineCheckbox1{{ top.id }}">{{ top.name }}</label>
+    </div>
+    {% endfor %}
+    <h3>Wishlist</h3>
+    {% for wishlist in wishlists %}
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="inlineCheckbox1{{ wishlist.id }}" name="w{{ wishlist.id }}" value="true">
+      <label class="form-check-label" for="inlineCheckbox1{{ wishlist.id }}">{{ wishlist.name }}</label>
+    </div>
+    {% endfor %}
+    <h3>Purchased</h3>
+    {% for purchase in purchases %}
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="inlineCheckbox1{{ purchase.id }}" name="p{{ purchase.id }}" value="true">
+      <label class="form-check-label" for="inlineCheckbox1{{ purchase.id }}">{{ purchase.name }}</label>
+    </div>
+    {% endfor %}
+    <button class="btn btn-primary" type="submit">Save</button>
+  </form>
+{% endblock %}

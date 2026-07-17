@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+
+{% block main %}
+  <form action="/search" method="post">
+    <div class="form-group">
+      <input autocomplete="off" autofocus class="form-control" name="search" placeholder="Search" type="text" id="searchBox2">
+    </div>
+    <button class="btn btn-primary" type="submit">Search</button>
+  </form>
+{% endblock %}

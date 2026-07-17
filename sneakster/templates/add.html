@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<div class="form-group">
+  <form action="/add" method="post">
+    <h3>Name*</h3>
+    <input type="text" name="name" placeholder="Sneaker Name" autocomplete="off">
+    <h3>Description</h3>
+    <input type="text" name="description" placeholder="Sneaker Description" autocomplete="off">
+    <h3>Colorway</h3>
+    <input type="text" name="colorway" placeholder="Sneaker Colorway" autocomplete="off">
+    <h3>Release Date</h3>
+    <input type="date" name="release" min="1895-01-01" max="2100-12-31">
+    <h3>Retail Price</h3>
+    $<input type="number" name="price" placeholder="170" autocomplete="off" min="0.00" max="30000.00">
+    <h3>Style ID</h3>
+    <input type="text" name="style" placeholder="Sneaker Style ID" autocomplete="off">
+    <h3>Image URL</h3>
+    <input type="text" name="image" placeholder="Image URL" autocomplete="off">
+    <h3>Purchase URL</h3>
+    <input type="text" name="purchase" placeholder="Purchase URL" autocomplete="off">
+    <br \>
+    <button type="submit" class="btn btn-primary" id="addbutton">Add to Database</button>
+  </form>
+</div>
+{% endblock %}
